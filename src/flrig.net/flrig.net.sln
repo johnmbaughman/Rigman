@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flrig.net", "flrig.net\flrig.net.csproj", "{3F15B44F-EC09-4D22-A295-0B36D850AF40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flrig.net.lib", "flrig.net.lib\flrig.net.lib.csproj", "{9A963727-2282-4919-891B-DD1B1C8D8CB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F15B44F-EC09-4D22-A295-0B36D850AF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F15B44F-EC09-4D22-A295-0B36D850AF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F15B44F-EC09-4D22-A295-0B36D850AF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F15B44F-EC09-4D22-A295-0B36D850AF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A963727-2282-4919-891B-DD1B1C8D8CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A963727-2282-4919-891B-DD1B1C8D8CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A963727-2282-4919-891B-DD1B1C8D8CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A963727-2282-4919-891B-DD1B1C8D8CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {920AF478-27C0-4761-9D06-4B1066522177}
+	EndGlobalSection
+EndGlobal
