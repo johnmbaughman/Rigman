@@ -11,7 +11,9 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Grid RowDefinitions="Auto,Auto,Auto">
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+        <Button Background="Blue" Content="{Binding Greeting}" Grid.Row="1" />
+        <Button Background="Blue" Content="{Binding Greeting}" Grid.Row="2" />
+    </Grid>
 </Window>
