@@ -1,6 +1,9 @@
-﻿using Avalonia;
+﻿using System.Diagnostics;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Splat;
+using flrig.net.lib;
 
 namespace flrig.net.Views
 {
@@ -11,6 +14,9 @@ namespace flrig.net.Views
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
+
+            var rig = Locator.Current.GetService<IRigs>();
+            Debug.WriteLine(rig.Name);
 #endif
         }
 
