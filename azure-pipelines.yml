@@ -17,7 +17,7 @@ pool:
   vmImage: 'windows-latest'
   demands:
   - msbuild
-  - visulstudio
+  - visualstudio
   - vstest
 
 steps:
