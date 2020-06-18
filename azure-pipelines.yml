@@ -34,27 +34,6 @@ steps:
     FileVersionNumber: '$(Build.BuildNumber)'
     InformationalVersion: '$(Build.BuildNumber)'
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- task: Assembly-Info-NetFramework@2
-  displayName: 'Set Assembly Manifest Data'
-  inputs:
-    Path: '$(Build.SourcesDirectory)'
-    FileNames: '**\AssemblyInfo.cs'
-    InsertAttributes: false
-    FileEncoding: 'auto'
-    Company: 'John K0VMX'
-    Copyright: 'John K0VMX'
-    VersionNumber: '$(Build.BuildNumber)'
-    FileVersionNumber: '$(Build.BuildNumber)'
-    InformationalVersion: '$(Build.BuildNumber)' 
-
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.8.1'
   inputs:
@@ -69,6 +48,6 @@ steps:
 - task: VSBuild@1
   displayName: 'Build solution flrig.net.sln'
   inputs:
-    solution: 'flrig.net.sln'
+    solution: '**\flrig.net.sln'
     platform: 'any cpu'
     configuration: 'Release'
