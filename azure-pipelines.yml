@@ -69,12 +69,6 @@ steps:
 - task: VSBuild@1
   displayName: 'Build solution flrig.net.sln'
   inputs:
-    solution: JTP.sln
-- task: VSBuild@1
-  inputs:
     solution: 'flrig.net.sln'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:AutoParameterizationWebConfigConnectionStrings=False'
     platform: 'any cpu'
     configuration: 'Release'
-    platform: 'any cpu'
-    configuration: Release
