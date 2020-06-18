@@ -13,13 +13,14 @@ pr:
 name: $(Date:yyyy.MM.dd)$(Rev:.r)
 
 pool:
- name: Default
- vmImage: 'windows-latest'
- demands:
- - msbuild
- - visulstudio
- - vstest
+  name: Default
+  vmImage: 'windows-latest'
+  demands:
+  - msbuild
+  - visulstudio
+  - vstest
 
+steps:
 - task: Assembly-Info-NetFramework@2
   displayName: 'Set Assembly Manifest Data'
   inputs:
@@ -33,7 +34,6 @@ pool:
     FileVersionNumber: '$(Build.BuildNumber)'
     InformationalVersion: '$(Build.BuildNumber)'
 
-steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
