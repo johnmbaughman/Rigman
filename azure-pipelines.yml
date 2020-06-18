@@ -20,6 +20,9 @@ pool:
   - visualstudio
   - vstest
 
+variables:
+  buildConfiguration: 'Release'
+
 steps:
 - task: Assembly-Info-NetFramework@2
   displayName: 'Set Assembly Manifest Data'
@@ -45,9 +48,15 @@ steps:
     restoreSolution: '$(solution)'
     feedsToUse: config
 
-- task: VSBuild@1
-  displayName: 'Build solution flrig.net.sln'
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '**\flrig.net.sln'
-    platform: 'any cpu'
-    configuration: 'Release'
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: '313927da-0007-44a8-84b0-ddec34e1d3a6'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: '**\flrig.net.sln'
+  displayName: 'dotnet build $(buildConfiguration)'
