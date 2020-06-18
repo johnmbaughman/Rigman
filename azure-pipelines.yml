@@ -53,6 +53,7 @@ steps:
     command: 'restore'
     feedsToUse: 'select'
     vstsFeed: '313927da-0007-44a8-84b0-ddec34e1d3a6'
+    projects: '**\flrig.net.sln'
 
 - task: DotNetCoreCLI@2
   inputs:
