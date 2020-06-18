@@ -7,8 +7,18 @@ trigger:
 - master
 - develop
 
+pr:
+- master
+
+name: $(Date:yyyy.MM.dd)$(Rev:.r)
+
 pool:
-  vmImage: 'windows-latest'
+ name: Default
+ vmImage: 'windows-latest'
+ demands:
+ - msbuild
+ - visulstudio
+ - vstest
 
 steps:
 - script: echo Hello, world!
@@ -18,3 +28,40 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: Assembly-Info-NetFramework@2
+  displayName: 'Set Assembly Manifest Data'
+  inputs:
+    Path: '$(Build.SourcesDirectory)'
+    FileNames: '**\AssemblyInfo.cs'
+    InsertAttributes: false
+    FileEncoding: 'auto'
+    Company: 'John K0VMX'
+    Copyright: 'John K0VMX'
+    VersionNumber: '$(Build.BuildNumber)'
+    FileVersionNumber: '$(Build.BuildNumber)'
+    InformationalVersion: '$(Build.BuildNumber)' 
+
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.8.1'
+  inputs:
+    versionSpec: 4.8.1
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: config
+
+- task: VSBuild@1
+  displayName: 'Build solution flrig.net.sln'
+  inputs:
+    solution: JTP.sln
+- task: VSBuild@1
+  inputs:
+    solution: 'flrig.net.sln'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:AutoParameterizationWebConfigConnectionStrings=False'
+    platform: 'any cpu'
+    configuration: 'Release'
+    platform: 'any cpu'
+    configuration: Release
