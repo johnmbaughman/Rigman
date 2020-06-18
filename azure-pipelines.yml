@@ -13,7 +13,7 @@ pr:
 name: $(Date:yyyy.MM.dd)$(Rev:.r)
 
 pool:
-  name: Default
+  name: Azure Pipelines
   vmImage: 'windows-latest'
   demands:
   - msbuild
