@@ -16,7 +16,10 @@ namespace flrig.net.Views
             this.AttachDevTools();
 
             var rig = Locator.Current.GetService<IRigs>();
-            Debug.WriteLine(rig.Name);
+            if (rig != null)
+            {
+                Debug.WriteLine(rig.Name);
+            }
 #endif
         }
 
