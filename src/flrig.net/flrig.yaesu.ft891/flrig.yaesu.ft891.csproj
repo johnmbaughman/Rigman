@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\flrig.net.lib\flrig.net.lib.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy $(OutDir)\$(TargetName).dll $(SolutionDir)\$(SolutionName)\bin\Debug\netcoreapp3.1\Plugins" />
+  </Target>
+
+</Project>
