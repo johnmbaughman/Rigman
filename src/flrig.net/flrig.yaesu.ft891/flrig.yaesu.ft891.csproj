@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(OutDir)\$(TargetName).dll $(SolutionDir)\$(SolutionName)\bin\Debug\netcoreapp3.1\Plugins" />
+    <Exec Command="xcopy $(ProjectDir)$(OutDir)$(TargetName).dll $(SolutionDir)$(SolutionName)\bin\Debug\netcoreapp3.1\Plugins\ /s /y" />
   </Target>
 
 </Project>
