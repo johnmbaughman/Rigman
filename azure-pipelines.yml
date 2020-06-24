@@ -67,5 +67,17 @@ steps:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
+- task: GitHubReleasePublish@1
+  inputs:
+    githubEndpoint: 'github connection 1'
+    manuallySetRepository: false
+    githubReleaseDraft: true
+    githubReleasePrerelease: false
+    githubIgnoreAssets: false
+    githubReuseRelease: true
+    githubReuseDraftOnly: true
+    githubSkipDuplicatedAssets: false
+    githubEditRelease: false
+    githubDeleteEmptyTag: false
     replaceExistingArchive: true
