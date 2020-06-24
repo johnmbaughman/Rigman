@@ -66,3 +66,11 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/flrig.net.$(Build.BuildNumber).zip'
     replaceExistingArchive: true
+    
+- task: GitHubRelease@1
+  displayName: 'GitHub release (create)'
+  inputs:
+    gitHubConnection: 'github connection 1'
+    repositoryName: johnmbaughman/flrig.net
+    tagSource: userSpecifiedTag
+    tag: 'v$(Build.BuildNumber)'
