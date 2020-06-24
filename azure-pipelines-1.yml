@@ -33,7 +33,7 @@ steps:
     Product: 'flrig.net'
     Copyright: 'Copyright © $(date:YYYY) John K0VMX'
     PackageProjectUrl: 'https://github.com/johnmbaughman/flrig.net'
-    VersionNumber: '$(Build.BuildNumber)'
+    VersionNumber: '$(Build.BuildNumber)-develop'
     LogLevel: 'verbose'
     FailOnWarning: false
     DisableTelemetry: false
