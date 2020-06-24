@@ -4,10 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- develop
 
 pr:
-- master
+- develop
 
 name: $(Date:yyyy.MM.dd)$(Rev:.r)
 
@@ -31,9 +31,9 @@ steps:
     FileEncoding: 'auto'
     WriteBOM: false
     Product: 'flrig.net'
-    Copyright: 'Copyright © $(date:YYYY) John K0VMX'
+    Copyright: 'Copyright ï¿½ $(date:YYYY) John K0VMX'
     PackageProjectUrl: 'https://github.com/johnmbaughman/flrig.net'
-    VersionNumber: '$(Build.BuildNumber)-release'
+    VersionNumber: '$(Build.BuildNumber)'
     LogLevel: 'verbose'
     FailOnWarning: false
     DisableTelemetry: false
@@ -51,18 +51,3 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
     projects: '**\flrig.net.sln'
   displayName: 'dotnet build $(buildConfiguration)'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\src\flrig.net\flrig.net\bin\Release\netcoreapp3.1\'
-    Contents: '**'
-    TargetFolder: '$(Build.BinariesDirectory)'
-    CleanTargetFolder: true
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/flrig.net.$(Build.BuildNumber).zip'
-    replaceExistingArchive: true
