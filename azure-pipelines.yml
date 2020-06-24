@@ -23,18 +23,20 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: Assembly-Info-NetFramework@2
-  displayName: 'Set Assembly Manifest Data'
+- task: Assembly-Info-NetCore@2
   inputs:
     Path: '$(Build.SourcesDirectory)'
-    FileNames: '**\AssemblyInfo.cs'
+    FileNames: '**/*.csproj'
     InsertAttributes: false
     FileEncoding: 'auto'
-    Company: 'John K0VMX'
-    Copyright: '2020 John K0VMX'
-    VersionNumber: '$(Build.BuildNumber)'
-    FileVersionNumber: '$(Build.BuildNumber)'
-    InformationalVersion: '$(Build.BuildNumber)'
+    WriteBOM: false
+    Product: 'flrig.net'
+    Copyright: 'Copyright © $(date:YYYY) John K0VMX'
+    PackageProjectUrl: 'https://github.com/johnmbaughman/flrig.net'
+    VersionNumber: '$(Build.BuildNumber)-release'
+    LogLevel: 'verbose'
+    FailOnWarning: false
+    DisableTelemetry: false
 
 - task: DotNetCoreCLI@2
   inputs:

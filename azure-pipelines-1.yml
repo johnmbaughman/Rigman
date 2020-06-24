@@ -31,7 +31,7 @@ steps:
     FileEncoding: 'auto'
     WriteBOM: false
     Product: 'flrig.net'
-    Copyright: 'Copyright © $(date:YYYY) John K0VMX'
+    Copyright: 'Copyright ï¿½ $(date:YYYY) John K0VMX'
     PackageProjectUrl: 'https://github.com/johnmbaughman/flrig.net'
     VersionNumber: '$(Build.BuildNumber)'
     LogLevel: 'verbose'
