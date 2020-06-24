@@ -4,11 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-#- master
-- develop
+- master
 
-#pr:
-#- master
+pr:
+- master
 
 name: $(Date:yyyy.MM.dd)$(Rev:.r)
 
