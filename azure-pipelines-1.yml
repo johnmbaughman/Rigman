@@ -1,0 +1,62 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- develop
+
+#pr:
+#- master
+
+name: $(Date:yyyy.MM.dd)$(Rev:.r)
+
+pool:
+  name: Azure Pipelines
+  vmImage: 'windows-latest'
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: Assembly-Info-NetFramework@2
+  displayName: 'Set Assembly Manifest Data'
+  inputs:
+    Path: '$(Build.SourcesDirectory)'
+    FileNames: '**\AssemblyInfo.cs'
+    InsertAttributes: false
+    FileEncoding: 'auto'
+    Company: 'John K0VMX'
+    Copyright: 'John K0VMX'
+    VersionNumber: '$(Build.BuildNumber)'
+    FileVersionNumber: '$(Build.BuildNumber)'
+    InformationalVersion: '$(Build.BuildNumber)'
+
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.8.1'
+  inputs:
+    versionSpec: 4.8.1
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: config
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: '313927da-0007-44a8-84b0-ddec34e1d3a6'
+    projects: '**\flrig.net.sln'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: '**\flrig.net.sln'
+  displayName: 'dotnet build $(buildConfiguration)'
