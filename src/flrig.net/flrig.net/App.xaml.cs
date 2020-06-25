@@ -32,21 +32,13 @@ namespace flrig.net
         /// <summary>
         /// Called when [framework initialization completed].
         /// </summary>
-        public override void OnFrameworkInitializationCompleted()
-        {
-            RegisterDependencies();
-            RegisterPlugins();
-
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
-            }
-
-            base.OnFrameworkInitializationCompleted();
-        }
+        //public override void OnFrameworkInitializationCompleted()
+        //{
+        //    RegisterDependencies();
+        //    RegisterPlugins();
+            
+        //    base.OnFrameworkInitializationCompleted();
+        //}
 
         /// <summary>
         /// Registers the dependencies.
