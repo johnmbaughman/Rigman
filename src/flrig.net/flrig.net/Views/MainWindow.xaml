@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="flrig.net.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="flrig.net">
+        Title="flrig.net"
+        Name="wndMain">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -14,6 +14,6 @@
     <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="Auto,*,Auto">
         <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="3"/>
         <Button Background="Blue" Content="{Binding Greeting}" Grid.Row="1" Grid.Column="1" />
-        <Button Background="Blue" Content="{Binding Greeting}" Grid.Row="2" Command="{Binding OnClickCommand}" />
+        <Button Background="Blue" Content="{Binding Greeting}" Grid.Row="2" Name="btnSerialSettings" />
     </Grid>
 </Window>
