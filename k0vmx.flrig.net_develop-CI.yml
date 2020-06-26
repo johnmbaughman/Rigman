@@ -4,10 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- develop
 
 pr:
-- master
+- develop
 
 name: $(Date:yyyy.MM.dd)$(Rev:.r)
 
@@ -23,18 +23,22 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: Assembly-Info-NetFramework@2
-  displayName: 'Set Assembly Manifest Data'
+- task: Assembly-Info-NetCore@2
   inputs:
     Path: '$(Build.SourcesDirectory)'
-    FileNames: '**\AssemblyInfo.cs'
+    FileNames: '**/*.csproj'
     InsertAttributes: false
     FileEncoding: 'auto'
-    Company: 'John K0VMX'
-    Copyright: '2020 John K0VMX'
+    WriteBOM: false
+    Product: 'flrig.net'
+    Copyright: 'Copyright $(date:YYYY) John K0VMX'
+    RepositoryUrl: 'https://github.com/johnmbaughman/flrig.net'
     VersionNumber: '$(Build.BuildNumber)'
     FileVersionNumber: '$(Build.BuildNumber)'
     InformationalVersion: '$(Build.BuildNumber)'
+    LogLevel: 'verbose'
+    FailOnWarning: false
+    DisableTelemetry: false
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -49,18 +53,3 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
     projects: '**\flrig.net.sln'
   displayName: 'dotnet build $(buildConfiguration)'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\src\flrig.net\flrig.net\bin\Release\netcoreapp3.1\'
-    Contents: '**'
-    TargetFolder: '$(Build.BinariesDirectory)'
-    CleanTargetFolder: true
-
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/flrig.net.$(Build.BuildNumber).zip'
-    replaceExistingArchive: true

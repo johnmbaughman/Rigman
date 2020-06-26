@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
+    <PackageReference Include="ReactiveUI" Version="10.3.6" />
   </ItemGroup>
 
 </Project>
