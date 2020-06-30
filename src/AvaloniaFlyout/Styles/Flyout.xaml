@@ -1,0 +1,35 @@
+﻿<!--<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Local="clr-namespace:Avalonia.Controls.Flyout;assembly=Avalonia.Controls.Flyout"
+             mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="800"
+             x:Class="Avalonia.Controls.Flyout.Flyout">
+  <UserControl.Resources>
+        <SolidColorBrush x:Key="ButtonBackground" Color="{Binding ButtonHover, ElementName=Control}"></SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonHover" Color="{Binding ButtonBackground, ElementName=Control}"></SolidColorBrush>
+        <SolidColorBrush x:Key="Shadow" Color="{Binding ShadowBackground, ElementName=Control}"></SolidColorBrush>
+        <Style Selector="Local|MenuButton">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}"></Setter>
+            <Setter Property="HoverBackground" Value="{DynamicResource ButtonHover}"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            --><!--<ColumnDefinition Name="MenuColumn" Width="400"></ColumnDefinition>
+            <ColumnDefinition Name="ShadowColumn" Width="0"></ColumnDefinition>--><!--
+        </Grid.ColumnDefinitions>
+        <ContentPresenter x:Name="MenuPresenter" Grid.Column="0" Content="{Binding Menu, ElementName=Control}"></ContentPresenter>
+        <Border Grid.Column="1" Background="{DynamicResource Shadow}" ></Border>
+    </Grid>
+</UserControl>-->
+
+<Styles xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Avalonia.Controls.Flyout;assembly=Avalonia.Controls.Flyout">
+  <Design.PreviewWith>
+    <local:Flyout>
+      
+    </local:Flyout>
+  </Design.PreviewWith>
+</Styles>

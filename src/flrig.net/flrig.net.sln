@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.net.lib", "flrig.net.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.net.test", "flrig.net.test\flrig.net.test.csproj", "{8314472B-FE7A-4F18-985B-B764E2FF2D9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flrig.yaesu.ft891", "flrig.yaesu.ft891\flrig.yaesu.ft891.csproj", "{77CF11E9-B3D5-4765-8BFB-80F6FBD44AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.yaesu.ft891", "flrig.yaesu.ft891\flrig.yaesu.ft891.csproj", "{77CF11E9-B3D5-4765-8BFB-80F6FBD44AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
