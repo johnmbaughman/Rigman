@@ -30,9 +30,9 @@ steps:
     InsertAttributes: false
     FileEncoding: 'auto'
     WriteBOM: false
-    Product: 'flrig.net'
+    Product: 'Rigman'
     Copyright: 'Copyright $(date:YYYY) John K0VMX'
-    RepositoryUrl: 'https://github.com/johnmbaughman/flrig.net'
+    RepositoryUrl: 'https://github.com/johnmbaughman/Rigman'
     VersionNumber: '$(Build.BuildNumber)'
     FileVersionNumber: '$(Build.BuildNumber)'
     InformationalVersion: '$(Build.BuildNumber)'
@@ -45,18 +45,18 @@ steps:
     command: 'restore'
     feedsToUse: 'select'
     vstsFeed: '313927da-0007-44a8-84b0-ddec34e1d3a6'
-    projects: '**\flrig.net.sln'
+    projects: '**\Rigman.sln'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
-    projects: '**\flrig.net.sln'
+    projects: '**\Rigman.sln'
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\src\flrig.net\flrig.net\bin\Release\netcoreapp3.1\'
+    SourceFolder: '$(Build.SourcesDirectory)\src\Rigman\Rigman\bin\Release\netcoreapp3.1\'
     Contents: '**'
     TargetFolder: '$(Build.BinariesDirectory)'
     CleanTargetFolder: true
@@ -66,13 +66,13 @@ steps:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/flrig.net.$(Build.BuildNumber).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Rigman.$(Build.BuildNumber).zip'
     replaceExistingArchive: true
     
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
   inputs:
     gitHubConnection: 'github connection 1'
-    repositoryName: johnmbaughman/flrig.net
+    repositoryName: johnmbaughman/Rigman
     tagSource: userSpecifiedTag
     tag: 'v$(Build.BuildNumber)'
