@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.net", "flrig.net\flrig.net.csproj", "{3F15B44F-EC09-4D22-A295-0B36D850AF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rigman", "Rigman\Rigman.csproj", "{3F15B44F-EC09-4D22-A295-0B36D850AF40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.net.lib", "flrig.net.lib\flrig.net.lib.csproj", "{9A963727-2282-4919-891B-DD1B1C8D8CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rigman.Common", "Rigman.lib\Rigman.Common.csproj", "{9A963727-2282-4919-891B-DD1B1C8D8CB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.net.test", "flrig.net.test\flrig.net.test.csproj", "{8314472B-FE7A-4F18-985B-B764E2FF2D9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rigman.Test", "Rigman.test\Rigman.Test.csproj", "{8314472B-FE7A-4F18-985B-B764E2FF2D9A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "flrig.yaesu.ft891", "flrig.yaesu.ft891\flrig.yaesu.ft891.csproj", "{77CF11E9-B3D5-4765-8BFB-80F6FBD44AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rigman.Yaesu.FT891", "Rigman.Yaesu.FT891\Rigman.Yaesu.FT891.csproj", "{77CF11E9-B3D5-4765-8BFB-80F6FBD44AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
