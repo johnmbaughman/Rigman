@@ -9,10 +9,10 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
-using flrig.net.ViewModels;
+using Rigman.ViewModels;
 using ReactiveUI;
 
-namespace flrig.net.Views
+namespace Rigman.Views
 {
     public class MainWindow : ReactiveWindow<MainWindowViewModel>
     {

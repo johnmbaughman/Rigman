@@ -5,14 +5,14 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Splat;
-using flrig.net.lib;
-using flrig.net.ViewModels;
-using flrig.net.Views;
+using Rigman.Common;
+using Rigman.ViewModels;
+using Rigman.Views;
 using System.Reflection;
 using System.Runtime.Loader;
 using System;
 
-namespace flrig.net
+namespace Rigman
 {
     /// <summary>
     /// Class App.

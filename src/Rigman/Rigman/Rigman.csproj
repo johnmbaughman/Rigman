@@ -29,6 +29,6 @@
     <PackageReference Include="Dock.Model.ReactiveUI" Version="0.9.9" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\flrig.net.lib\flrig.net.lib.csproj" />
+    <ProjectReference Include="..\Rigman.Common\Rigman.Common.csproj" />
   </ItemGroup>
 </Project>

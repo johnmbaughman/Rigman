@@ -1,10 +1,10 @@
 ﻿using Dock.Model.Controls;
-using flrig.net.lib;
+using Rigman.Common;
 using ReactiveUI;
 using System;
 using System.Reactive;
 
-namespace flrig.net.ViewModels
+namespace Rigman.ViewModels
 {
     public class MenuViewModel : Tool
     {

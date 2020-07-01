@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reactive;
 using Dock.Model.Controls;
-using flrig.net.lib;
+using Rigman.Common;
 using ReactiveUI;
 
-namespace flrig.net.ViewModels
+namespace Rigman.ViewModels
 {
     public class ToolBarViewModel : Tool
     {

@@ -9,13 +9,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Logging.Serilog;
 using Avalonia.ReactiveUI;
-using flrig.net.lib;
-using flrig.net.ViewModels;
-using flrig.net.Views;
+using Rigman.Common;
+using Rigman.ViewModels;
+using Rigman.Views;
 using ReactiveUI;
 using Splat;
 
-namespace flrig.net
+namespace Rigman
 {
     internal static class Program
     {

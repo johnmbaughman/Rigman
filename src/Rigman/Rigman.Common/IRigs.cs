@@ -1,4 +1,4 @@
-﻿namespace flrig.net.lib
+﻿namespace Rigman.Common
 {
     public interface IRigs
     {

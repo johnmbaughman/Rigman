@@ -2,8 +2,8 @@
 using System.Diagnostics;
 #endif
 using Dock.Model;
-using flrig.net.lib;
-using flrig.net.Views;
+using Rigman.Common;
+using Rigman.Views;
 using ReactiveUI;
 using Splat;
 using System;
@@ -11,7 +11,7 @@ using System.Reactive;
 using System.Reactive.Disposables;
 using System.Threading;
 
-namespace flrig.net.ViewModels
+namespace Rigman.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, IActivatableViewModel
     {

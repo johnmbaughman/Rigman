@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace flrig.net.test
+namespace Rigman.Test
 {
     public class UnitTest1
     {

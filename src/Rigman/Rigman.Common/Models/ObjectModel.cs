@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace flrig.net.lib.Models
+namespace Rigman.Common.Models
 {
     public class ObjectModel : ReactiveObject
     {

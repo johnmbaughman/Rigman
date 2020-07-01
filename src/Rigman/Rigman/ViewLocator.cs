@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using flrig.net.ViewModels;
+using Rigman.ViewModels;
 
-namespace flrig.net
+namespace Rigman
 {
     public class ViewLocator : IDataTemplate
     {

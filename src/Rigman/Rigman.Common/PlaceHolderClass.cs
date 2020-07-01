@@ -1,4 +1,4 @@
-﻿namespace flrig.net.lib
+﻿namespace Rigman.Common
 {
     public class PlaceHolderClass : IPlaceHolderClass
     {

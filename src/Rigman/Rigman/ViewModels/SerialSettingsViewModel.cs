@@ -6,11 +6,11 @@ using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading;
-using flrig.net.lib;
+using Rigman.Common;
 using ReactiveUI;
 using Splat;
 
-namespace flrig.net.ViewModels
+namespace Rigman.ViewModels
 {
     public class SerialSettingsViewModel : ViewModelBase, ISerialSettingsViewModel
     {

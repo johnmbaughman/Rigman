@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace flrig.yaesu.ft891
+namespace Rigman.Yaesu.FT891
 {
     public class Testing : IDisposable
     {

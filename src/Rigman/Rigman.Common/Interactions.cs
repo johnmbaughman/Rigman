@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive;
-using flrig.net.lib.Models;
+using Rigman.Common.Models;
 using ReactiveUI;
 
-namespace flrig.net.lib
+namespace Rigman.Common
 {
     public static class Interactions
     {

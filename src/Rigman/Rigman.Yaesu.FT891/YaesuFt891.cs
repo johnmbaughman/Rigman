@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using flrig.net.lib;
+using Rigman.Common;
 
-namespace flrig.yaesu.ft891
+namespace Rigman.Yaesu.FT891
 {
     public class YaesuFt891 : IRigs
     {
