@@ -20,9 +20,13 @@
     <Compile Remove="PluginLoadContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.10" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.9.10" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.10" />
+    <PackageReference Include="Avalonia" Version="0.9.11" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.9.11" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.11" />
+    <PackageReference Include="Dock.Avalonia" Version="0.9.9" />
+    <PackageReference Include="Dock.Avalonia.Themes.Default" Version="0.9.9" />
+    <PackageReference Include="Dock.Model" Version="0.9.9" />
+    <PackageReference Include="Dock.Model.ReactiveUI" Version="0.9.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\flrig.net.lib\flrig.net.lib.csproj" />

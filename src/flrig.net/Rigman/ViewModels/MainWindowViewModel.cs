@@ -1,19 +1,22 @@
-﻿using System;
-#if DEBUG
+﻿#if DEBUG
 using System.Diagnostics;
 #endif
-using System.Reactive;
-using System.Reactive.Disposables;
-using System.Threading;
+using Dock.Model;
 using flrig.net.lib;
 using flrig.net.Views;
 using ReactiveUI;
 using Splat;
+using System;
+using System.Reactive;
+using System.Reactive.Disposables;
+using System.Threading;
 
 namespace flrig.net.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase, IActivatableViewModel
     {
+        private IDock _layout;
+        private AppData _appData;
 
         public MainWindowViewModel()
         {
@@ -64,8 +67,26 @@ namespace flrig.net.ViewModels
 
         public ReactiveCommand<Unit, Unit> OnClickCommand { get; }
 
+        public IDock Layout
+        {
+            get => _layout;
+            set => this.RaiseAndSetIfChanged(ref _layout, value);
+        }
+
         public MainWindow Window { get; set; }
 
         public ViewModelActivator Activator { get; }
+
+        public AppData AppData
+        {
+            get => _appData;
+            set => this.RaiseAndSetIfChanged(ref _appData, value);
+        }
+    }
+
+    public class AppData
+    {
+        public MainWindow MainWindow { get; set; }
+        
     }
 }
